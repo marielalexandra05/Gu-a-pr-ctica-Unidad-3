@@ -14,31 +14,31 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public List<Student> findAll() {
-        return null;
+        return studentRepository.findAll();
     }
 
     @Override
     public Student findByStudentNumber(long numStudent) {
-        return null;
+        return studentRepository.findByStudentNumber(numStudent);
     }
 
     @Override
     public Student findByEmail(String email) {
-        return null;
+        return studentRepository.findByEmail(email);
     }
 
     @Override
     public List<Student> findAllByOrderGpa() {
-        return null;
+        return studentRepository.findAllByOrderByGpa();
     }
 
     @Override
     public void saveOrUpdateStudent(Student student) {
-
+studentRepository.save(student);
     }
 
     @Override
     public void deleteStudent(String id) {
-
+studentRepository.deleteById(id);
     }
 }

@@ -15,7 +15,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping (value = "/")
+    @GetMapping (value = "/listar")
     public List<Student> getAllStudents(){
         return studentService.findAll();
     }
@@ -38,7 +38,7 @@ public class StudentController {
     @PostMapping (value = "/")
     public ResponseEntity<?> SaveOrUpdateStudent (@RequestBody Student student){
         studentService.saveOrUpdateStudent(student);
-        return new ResponseEntity<>("Estudiante agregado con exito", HttpStatus.OK);
+        return new ResponseEntity("Estudiante agregado con exito", HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{studentNumber}")
